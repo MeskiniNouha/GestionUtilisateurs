@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+{% form_theme form 'AppBundle:user:fields.html.twig' %}
+{% block body %}
+    <h1 style="text-align: center;font-family: 'Arial Black';">User creation</h1>
+
+    {{ form_start(form) }}
+        {{ form_widget(form) }}
+        <input class="btn btn-primary btn-large" type="submit" value="Create" />
+    {{ form_end(form) }}
+
+    
+            <a class="btn btn-primary btn-large" href="{{ path('user_index') }}">Back to the list</a>
+       
+{% endblock %}

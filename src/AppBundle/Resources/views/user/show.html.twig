@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1 style="text-align: center;font-family: 'Arial Black';">User {{ user.username }} </h1>
+
+    <table class="table table-hover">
+        <tbody>
+            <tr>
+                <th>Email</th>
+                <td>{{ user.email }}</td>
+            </tr>
+            <tr>
+                <th>Username</th>
+                <td>{{ user.username }}</td>
+            </tr>
+            <tr>
+                <th>Actions</th>
+                <td>
+                    <div class="btn-toolbar">
+                        <a class="btn btn-primary btn-large" href="{{ path('user_index') }}">Back to the list</a>
+
+                        <a class="btn btn-primary btn-large" href="{{ path('user_edit', { 'id': user.id }) }}">Edit</a>
+
+                    </div>
+
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+   
+            {{ form_start(delete_form) }}
+                <input class="btn btn-primary btn-large  btn-block" type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+     
+{% endblock %}
